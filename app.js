@@ -4,10 +4,6 @@ const path = require('path');
 const router = express.Router();
 const port = 3000
 
-/*app.get('/', (req, res) => {
-  res.send('Hello World!')
-})*/
-
 router.get('/',function(req,res){
     res.sendFile(path.join(__dirname+'/index.html'));    
 });
