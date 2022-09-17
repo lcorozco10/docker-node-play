@@ -1,9 +1,9 @@
-const express = require('express')
+const express = require('express');
 const redis = require('redis');
 const path = require('path');
-const app = express()
+const app = express();
 const router = express.Router();
-const port = 3000
+const port = 3000;
 
 let redisClient;
 
@@ -30,5 +30,5 @@ router.get('/', async function (req, res) {
 app.use('/', router);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Example app listening on port ${port}`);
+});
