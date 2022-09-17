@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  web-node:
+    build: .
+    command: npm start
+    ports:
+      - target: 3000
+        published: 8081
+    networks:
+      - my-web-net
+    volumes:
+      - type: volume
+        source: site-volume
+        target: /usr/src/app
+  redis-service:
+    image: "redis:alpine"
+    networks:
+      - my-web-net
+
+networks:
+  my-web-net:
+
+volumes:
+  site-volume:
