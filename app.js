@@ -5,7 +5,7 @@ const app = express();
 const router = express.Router();
 const port = 3000;
 
-/* let redisClient;
+let redisClient;
 
 (async () => {
   redisClient = redis.createClient({
@@ -26,11 +26,11 @@ router.get('/', async function (req, res) {
   await redisClient.set('counter', counter ? parseInt(counter) + 1 : 1);
 
   res.sendFile(path.join(__dirname + '/index.html'));
-});*/
-
-router.get('/', async function (req, res) {  
-  res.sendFile(path.join(__dirname + '/index.html'));
 });
+
+ /* router.get('/', async function (req, res) {  
+  res.sendFile(path.join(__dirname + '/index.html'));
+}); */
 
 app.use('/', router);
 
